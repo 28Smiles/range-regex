@@ -1,0 +1,34 @@
+[package]
+name = "range-regex-fuzz"
+version = "0.0.0"
+publish = false
+edition = "2021"
+
+[package.metadata]
+cargo-fuzz = true
+
+[dependencies]
+libfuzzer-sys = "0.4"
+arbitrary = "1"
+regex = "1.10.4"
+
+[dependencies.range-regex]
+path = ".."
+
+[workspace]
+members = ["."]
+
+[profile.release]
+debug = 1
+
+[[bin]]
+name = "match"
+path = "fuzz_targets/match.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "compile"
+path = "fuzz_targets/compile.rs"
+test = false
+doc = false

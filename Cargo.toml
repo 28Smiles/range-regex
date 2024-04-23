@@ -1,0 +1,14 @@
+[package]
+name = "range-regex"
+version = "0.1.0"
+edition = "2021"
+authors = ["Leon Camus"]
+repository = "https://github.com/28Smiles/range-regex"
+license = "MIT"
+description = "A library to generate regexes for ranges of numbers."
+
+[dependencies]
+bumpalo = "3" # Used to remove micro allocations.
+
+[dev-dependencies]
+regex = "1"
